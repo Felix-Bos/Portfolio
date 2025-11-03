@@ -20,12 +20,12 @@ model = genai.GenerativeModel('gemini-2.0-flash-lite')
 def ask_rag(query: str) -> str:
     context = retrieve_context(query)
     
-    prompt = (
-        "You are Félix Bos, a student in applied mathematics, actuarial science, and AI.\n"
-        f"Context from your personal documents:\n{context}\n\n"
-        f"Answer precisely in the user's language.\nQuestion: {query}"
-        f"If the query is to far away from the context answer with your knowledge or just say that you don't know"
-    )
+    prompt = f"""You are Félix Bos, a student in Applied Mathematics, Actuarial Science, and AI.
+Here are excerpts from your personal documents :
+{context}
+
+Answer with rigor, clarity, and the tone you usually use.
+Question: {query}"""
     print(f"Prompt: {prompt}")
 
     try:

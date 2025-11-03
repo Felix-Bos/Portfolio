@@ -1,4 +1,110 @@
 {% extends "base.html" %}
+{% load static %}
+{% block title %}Félix Bos — CV{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'core/css/core.css' %}">
+<link rel="stylesheet" href="{% static 'core/css/cv.css' %}">
+{% endblock %}
+
 {% block content %}
-<h1>CV</h1>
+<div style="text-align: center; padding-top: 6rem; color: white; position: relative; z-index: 1;">
+    <h1>Félix Bos</h1>
+    <p>Student in Applied Mathematics, Actuarial Science, and AI</p>
+</div>
+
+<div class="timeline">
+    <div class="timeline-item left">
+        <div class="timeline-content">
+            <h2>Master's Degree, MS2A (Computer science and mathematics)</h2>
+            <h3>Sorbonne University</h3>
+            <span class="date">2025 - present</span>
+            <p><strong>Main courses:</strong> statistical learning, deep learning, computer vision, reinforcement learning, LLM, stochastic optimization, non-parametric estimation, modern statistical learning, parallel programming on GPU, large database management.</p>
+        </div>
+    </div>
+    <div class="timeline-item right">
+        <div class="timeline-content">
+            <h2>Master's Degree in Actuarial Science (M1 and M2)</h2>
+            <h3>Sorbonne University, ISUP</h3>
+            <span class="date">2024 - present</span>
+            <p><strong>Main courses:</strong> stochastic finance, statistical learning, statistics, time series, extreme value theory, jump processes, rates modelling, financial mathematics, economics, portfolio management, law and insurance regulation, econometrics of insurance, VBA.</p>
+        </div>
+    </div>
+    <div class="timeline-item left">
+        <div class="timeline-content">
+            <h2>Master's Degree in Mathematics (Data Science track)</h2>
+            <h3>Sorbonne University</h3>
+            <span class="date">2024 - 2025</span>
+            <p><strong>Main courses:</strong> advanced probability, statistics, probabilistic machine learning, non-parametric statistics, high-dimensional statistics, numerical optimization and data science, C++.</p>
+        </div>
+    </div>
+    <div class="timeline-item right">
+        <div class="timeline-content">
+            <h2>Bachelor's Degree in Mathematics and Computer Science</h2>
+            <h3>Sorbonne University, ISUP</h3>
+            <span class="date">2021 - 2024</span>
+            <p><strong>Mathematics:</strong> probability, statistics, measure theory, functional analysis, numerical analysis, stochastic modeling, multivariate data analysis, optimization, algebra.</p>
+            <p><strong>Computer Science:</strong> Python, C, R, OCaml, Assembly, algorithms, discrete mathematics, functional programming, computer architecture, machine learning, data analysis.</p>
+        </div>
+    </div>
+</div>
+
+<div class="skills-section">
+    <h2>Skills & Interests</h2>
+    <div class="skills-grid">
+        <div class="skill-category">
+            <h3>IT Skills</h3>
+            <ul>
+                <li>Python, C++, C, R, OCaml, Assembly</li>
+                <li>HTML, CSS, JS, Django, VueJS, VBA</li>
+                <li>SOLID, OOP, CI/CD</li>
+            </ul>
+        </div>
+        <div class="skill-category">
+            <h3>Languages</h3>
+            <ul>
+                <li>French (Native)</li>
+                <li>English (Professional proficiency)</li>
+                <li>Chinese (Mandarin, High School)</li>
+            </ul>
+        </div>
+        <div class="skill-category">
+            <h3>Interests</h3>
+            <ul>
+                <li>Cooking, Mathematics, Computer Science</li>
+                <li>Deep Learning, Generative AI, Finance</li>
+                <li>Music: Oboe (13 years), Guitar, Singing</li>
+                <li>Sports: Running, Swimming, Weightlifting</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="cta-section">
+    <h2>Download my CV</h2>
+    <a href="{% static 'core/pdf/CV_Felix_Bos_AI.pdf' %}" class="btn-cv" download>Download PDF</a>
+    <a href="{% static 'core/pdf/CV_Felix_Bos_AI.pdf' %}" class="btn-cv" target="_blank">Preview PDF</a>
+    <p style="margin-top: 2rem;">For more information, feel free to ask my AI assistant!</p>
+</div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const timelineItems = document.querySelectorAll(".timeline-item");
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.1 });
+
+    timelineItems.forEach(item => {
+        observer.observe(item);
+    });
+});
+</script>
 {% endblock %}

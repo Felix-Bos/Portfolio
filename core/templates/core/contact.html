@@ -1,4 +1,48 @@
+
 {% extends "base.html" %}
+{% load static %}
+{% block title %}Félix Bos — Contact{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'core/css/core.css' %}">
+<style>
+    .contact-section {
+        padding: 6rem 2rem 3rem;
+        color: white;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+    }
+    .contact-info {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: rgba(10, 10, 15, 0.7);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .contact-info p {
+        font-size: 1.2rem;
+        margin: 1rem 0;
+    }
+    .contact-info a {
+        color: #e0e3ff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .contact-info a:hover {
+        color: #ffffff;
+    }
+</style>
+{% endblock %}
+
 {% block content %}
-<h1>Contact</h1>
+<section class="contact-section">
+    <h1>Contact me</h1>
+    <div class="contact-info">
+        <p><strong>City:</strong> Issy-les-Moulineaux</p>
+        <p><strong>Email:</strong> <a href="mailto:felix.bos001@gmail.com">felix.bos001@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+33623596995">06 23 59 69 95</a></p>
+    </div>
+</section>
 {% endblock %}
