@@ -1,0 +1,34 @@
+
+
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'chatbot/css/chat.css' %}">
+
+
+
+<div id="chatbot-popup" class="hidden">
+
+  <div id="chatbot-header">
+
+    <h3>Discuter avec Félix</h3>
+
+    <button id="close-chatbot">&times;</button>
+
+  </div>
+
+  <div id="chatbot-messages"></div>
+
+  <div id="chatbot-input">
+
+    <input type="text" id="message-input" placeholder="Posez votre question...">
+
+    <button id="send-message">Envoyer</button>
+
+  </div>
+
+</div>
+
+
+
+<script src="{% static 'chatbot/js/chat.js' %}"></script>
