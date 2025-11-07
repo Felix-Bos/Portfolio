@@ -5,13 +5,15 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from portfolio.settings import BASE_DIR
-from chatbot.rag.loaders.pdf_loader import load_pdfs
-from chatbot.rag.loaders.txt_loader import load_txt_and_md
-from chatbot.rag.loaders.code_loader import load_py
 
 VECTOR_STORE_PATH = os.path.join(BASE_DIR, "chatbot", "rag", "vector_store")
 
 def build_vector_store():
+    # Import heavy document loaders only when rebuilding to keep default imports light
+    from chatbot.rag.loaders.pdf_loader import load_pdfs
+    from chatbot.rag.loaders.txt_loader import load_txt_and_md
+    from chatbot.rag.loaders.code_loader import load_py
+
     print("Loading documents...")
     documents = load_pdfs() + load_txt_and_md() + load_py()
     print(f"Loaded {len(documents)} documents.")
