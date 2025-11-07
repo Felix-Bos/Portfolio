@@ -3,7 +3,7 @@ import os
 import shutil
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from portfolio.settings import BASE_DIR
 
 VECTOR_STORE_PATH = os.path.join(BASE_DIR, "chatbot", "rag", "vector_store")
