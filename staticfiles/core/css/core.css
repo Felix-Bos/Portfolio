@@ -1,0 +1,167 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
+#vanta-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-color: #0a0a0f;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 2.5rem 1rem;
+  z-index: 2;
+  background: linear-gradient(180deg, rgba(10, 10, 15, 0.9) 0%, rgba(10, 10, 15, 0) 100%);
+  box-sizing: border-box;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+#chat-button {
+  margin-left: auto;
+}
+
+header nav a {
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0.75rem;
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #e0e3ff;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+
+header nav a:hover {
+  color: #e0e3ff;
+}
+
+header hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: 1rem;
+}
+
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6rem 1rem 3rem;
+  box-sizing: border-box;
+  animation: fadeIn 2s ease-in-out;
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+}
+
+.hero .intro {
+  max-width: 700px;
+}
+
+.hero .intro h1 {
+  font-size: 4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.hero .intro h2 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #ffffff;
+  color: #0a0a0f;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem 0.75rem;
+  }
+
+  header nav a {
+    margin: 0 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .hero .intro h1 {
+    font-size: 3rem;
+  }
+
+  .hero .intro h2 {
+    font-size: 1rem;
+  }
+}
