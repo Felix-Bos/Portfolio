@@ -3,10 +3,10 @@ import json
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from chatbot.rag.llm_interface import ask_rag
 
 @csrf_exempt
 def chat_api(request):
+    from chatbot.rag.llm_interface import ask_rag  # Lazy import to avoid heavy RAG deps during startup
     if request.method == "POST":
         try:
             data = json.loads(request.body.decode("utf-8"))
@@ -26,4 +26,3 @@ def chat_api(request):
 
 def chat_view(request):
     return render(request, 'chatbot/widget.html')
-
