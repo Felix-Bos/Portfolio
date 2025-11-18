@@ -1,4 +1,4 @@
-# Personal Portfolio with Integrated RAG Assistant ONLINE SOON !!!
+# Personal Portfolio with Integrated RAG Assistant (ONLINE SOON !!!)
 
 This project is a personal portfolio website designed to present my work, background, and technical skills. Unlike a traditional static portfolio, this platform includes an intelligent conversational component powered by Retrieval-Augmented Generation (RAG).  
 The assistant is trained on my resume, projects, and technical documents, allowing it to answer questions as if I were responding in person.
